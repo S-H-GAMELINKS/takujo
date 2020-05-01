@@ -10,5 +10,12 @@
   <%= @room.description %>
 </p>
 
+<h2>Comments</h2>
+<div id="comments">
+  <%= render @room.comments %>
+</div>
+
+<%= render 'comments/new', room: @room %>
+
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>

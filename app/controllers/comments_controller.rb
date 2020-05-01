@@ -1,4 +1,4 @@
-class CoomentsController < ApplicationController
+class CommentsController < ApplicationController
     before_action :set_room
 
     def create
@@ -9,10 +9,13 @@ class CoomentsController < ApplicationController
         end
     end
 
+    def new
+    end
+
     private
 
         def set_room
-            @room = Room.find(params[:id])
+            @room = Room.find(params[:room_id])
         end
 
         def comment_params
