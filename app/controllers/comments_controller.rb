@@ -9,9 +9,6 @@ class CommentsController < ApplicationController
         end
     end
 
-    def new
-    end
-
     private
 
         def set_room
