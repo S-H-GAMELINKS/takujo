@@ -1,4 +1,5 @@
 <%= form_with(model: [room, room.comments.build], remote: true) do |form| %>
-    <%= form.text_area :content, size: '50x20' %><br>
+    <%= form.text_area :content, size: '50x20', id: 'comment_area', data: { behavior: 'room_speaker' } %><br>
+    <%= form.hidden_field :room_id, value: room.id, id: 'room_id' %>
     <%= form.submit %>
 <% end %> 
