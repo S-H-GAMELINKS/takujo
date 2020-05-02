@@ -10,11 +10,15 @@ const RoomChannel = consumer.subscriptions.create("RoomChannel", {
   },
 
   received(data) {
+    let commentArea = document.getElementById('comments');
+
+    commentArea.innerHTML += data['render'];
+    console.log(data);
   },
 
-  speak: function(message, roomId) {
+  speak: function(comment, roomId) {
     return this.perform('speak', {
-      message: message,
+      comment: comment,
       room_id: roomId
     });
   }
