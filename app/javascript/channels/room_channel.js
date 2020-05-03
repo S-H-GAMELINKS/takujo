@@ -27,13 +27,15 @@ const RoomChannel = consumer.subscriptions.create("RoomChannel", {
 
 let commentArea = document.getElementById('comment_area');
 
-commentArea.addEventListener('keypress', (event) => {
-  if (event.keyCode === 13) {
+if (commentArea !== null) {
+  commentArea.addEventListener('keypress', (event) => {
+    if (event.keyCode === 13) {
 
-    let roomId = document.getElementById('room_id').value;
+      let roomId = document.getElementById('room_id').value;
 
-    RoomChannel.speak(event.target.value, roomId);
-    event.target.value = '';
-    return event.preventDefault();
-  }
-});
+      RoomChannel.speak(event.target.value, roomId);
+      event.target.value = '';
+      return event.preventDefault();
+    }
+  });
+}
